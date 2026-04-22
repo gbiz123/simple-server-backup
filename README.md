@@ -1,4 +1,4 @@
-# Server Backup Script
+# simple-server-backup
 
 Backs up remote servers by reading host and device information from a dedicated block in `/etc/hosts`, then cloning each server's disk over SSH using `dd`.
 
