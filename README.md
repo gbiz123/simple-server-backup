@@ -1,6 +1,7 @@
 # simple-server-backup
 
 Backs up remote servers by reading host and device information from a dedicated block in `/etc/hosts`, then cloning each server's disk over SSH using `dd`.
+Great if you have lots of servers or VPS's and want to back them all up to a single place under your control.
 
 ## Requirements
 
