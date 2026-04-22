@@ -2,7 +2,7 @@
 Back up servers that are listed in your /etc/hosts file.
 
 Runs the following linux command:
-ssh root@{hostname} "dd if={device_name} bs=4M status=progress" | dd of=/path/to/backup/{hostname}.img bs=4
+ssh root@{hostname} "dd if={device_name} bs=4M status=progress" | dd of=/path/to/backup/{hostname}.img bs=4M
 
 Your /etc/hosts must have a block meeting the following requirements:
     - Starts with # BACKUP START
@@ -49,7 +49,7 @@ for line in etc_hosts.splitlines():
         )
 
 for host in hosts:
-    cmd = 'ssh root@{host} "dd if={device} bs=4M status=progress" | dd of={backup_path}/{host}.img bs=4'.format(
+    cmd = 'ssh root@{host} "dd if={device} bs=4M status=progress" | dd of={backup_path}/{host}.img bs=4M'.format(
             ip=host["ip"],
             backup_path=BACKUP_PATH,
             host=host["host"],
